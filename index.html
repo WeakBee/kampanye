@@ -3,34 +3,355 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sticky Navbar</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>KORMI Kabupaten X</title>
+    <link rel="icon" href="./assets/favicon.png" sizes="32x32" type="image/png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primarytext: '#26777a',
+                primarytext2: '#0c4b4e',
+              }
+            }
+          }
+        }
+      </script>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-<nav id="navbar" class="bg-gray-800 text-white w-full fixed top-0 z-50">
-    <div class="container mx-auto px-4 py-2 flex justify-between items-center">
-        <div class="flex items-center">
-            <a href="#" class="text-lg font-semibold">Logo</a>
-            <ul class="hidden md:flex ml-4 space-x-4">
-                <li><a href="#" class="hover:text-gray-300">Home</a></li>
-                <li><a href="#" class="hover:text-gray-300">About</a></li>
-                <li><a href="#" class="hover:text-gray-300">Services</a></li>
-                <li><a href="#" class="hover:text-gray-300">Contact</a></li>
-            </ul>
-        </div>
+<nav class="z-50 bg-white fixed w-full z-20 top-0 start-0">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between md:justify-center mx-auto p-4">
+    <a href="https://flowbite.com/" class="lg:hidden flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="./assets/logo.png" class="h-8" alt="Flowbite Logo">
+    </a>
+    <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-sticky" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+    </div>
+    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+      <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-20 rtl:space-x-reverse md:flex-row md:items-center md:justify-center md:mt-0 md:border-0 md:bg-white">
+        <li>
+          <a href="#" class="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0" aria-current="page">Beranda</a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Tentang Kami</a>
+        </li>
+        <li class="hidden md:block">
+            <img src="./assets/logo.png" alt="logo" class="w-40">
+        </li>
+        <li>
+            <button id="dropdownNavbarLink1" data-dropdown-toggle="dropdownNavbar1" class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto">
+                Informasi 
+                <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg>
+            </button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar1" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownLargeButton">
+                    <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Lorem Ipsum</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Lorem Ipsum</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Lorem Ipsum</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <button id="dropdownNavbarLink2" data-dropdown-toggle="dropdownNavbar2" class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto">
+                Media 
+                <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg>
+            </button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar2" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownLargeButton">
+                    <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Foto</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Video</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+      </ul>
+    </div>
     </div>
 </nav>
-
-<div class="h-24"></div>
-
-<div class="container mx-auto">
-    <p class="text-3xl font-semibold">Content Area</p>
-    <!-- Your content here -->
+  
+<div class="w-full flex justify-center">
+    <div class="container w-full flex justify-center items-end relative md:pt-10">
+        <img class="-z-10 absolute w-full opacity-10" src="./assets/peta.png" alt="Peta Indonesia">
+        <div class="absolute z-10 bottom-0 w-full h-20 bg-gradient-to-t from-white"></div>
+        <div class="absolute left-0 h-full w-20 bg-gradient-to-r from-white"></div>
+        <div class="absolute right-0 h-full w-20 bg-gradient-to-l from-white"></div>
+        <img class="transition origin-bottom duration-300 relative h-2/4 md:h-3/4 hover:scale-110" src="./assets/orang1.png" alt="">
+        <img class="transition origin-bottom duration-300 relative h-2/4 md:h-3/4 hover:scale-110" src="./assets/orang2.png" alt="">
+        <div class="absolute p-2 glassmorphism bottom-72 md:bottom-44 text-right left-0 md:left-1/4">
+            <p class="font-bold">Jabatan</p>
+            <p>Nama Orang 1</p>
+        </div>
+        <div class="absolute p-2 glassmorphism bottom-72 md:bottom-44 right-0 md:right-1/4">
+            <p class="font-bold">Jabatan</p>
+            <p>Nama Orang 2</p>
+        </div>
+        <p class="absolute text-teal-950 text-2xl md:text-9xl font-bold z-20" >AMIN 2024</p>
+    </div>
+</div>
+<div class="w-full flex justify-center py-5">
+    <div class="container px-10 w-full flex justify-center items-center relative pt-20 pb-10">
+        <a href="#card-calon1" class="cursor-pointer rounded-full w-10 h-10 bg-teal-800 flex justify-center items-center">
+            <img src="./assets/arrow-down.png" class="w-1/2 shadow-lg" alt="">
+        </a>
+    </div>
+</div>
+<div id="card-calon1" class="w-full flex justify-center py-10">
+    <div class="container md:px-10 w-full md:flex justify-center items-center relative">
+        <div class="bg-teal-800 w-full rounded-[30px] relative overflow-hidden md:flex text-white ">
+            <img src="./assets/paper-effect.webp" class="z-0 opacity-20 absolute w-full h-full" alt="">
+            <div class="w-full md:w-1/2 flex flex-col items-center justify-end relative pt-10">
+                <p class="text-center">Calon Jabatan</p>
+                <p class="text-center text-4xl">Lorem</p>
+                <p class="text-center text-2xl">Ipsum</p>
+                <p class="absolute bottom-10 text-lg text-center w-2/3">"Mewujudkan keadilan dan kesejahteraan bagi seluruh rakyat Indonesia"</p>
+                <img class="w-1/2" src="./assets/orang1.png" alt="">
+            </div>
+            <div class="w-full md:w-1/2 py-10 px-16 flex flex-col items-center md:items-start justify-center section-right">
+                <div class="title z-[2]">5 Rekam Karya Penting</div>
+                <div class="fullname mb-5">Lorem Ipsum</div>
+                <div class="py-[12px] flex gap-[12px] card-point items-center pr-[5px]">
+                    <div class="number">01</div>
+                    <div class="text">Garda terdepan pendidikan Indonesia menjadi <span style="font-weight: 700">Menteri Pendidikan dan Kebudayaan (2014—2016).</span></div>
+                </div>
+                <div class="py-[12px] flex gap-[12px] card-point items-center pr-[5px]">
+                    <div class="number">02</div>
+                    <div class="text">Garda terdepan pendidikan Indonesia menjadi <span style="font-weight: 700">Menteri Pendidikan dan Kebudayaan (2014—2016).</span></div>
+                </div>
+                <div class="py-[12px] flex gap-[12px] card-point items-center pr-[5px]">
+                    <div class="number">03</div>
+                    <div class="text">Garda terdepan pendidikan Indonesia menjadi <span style="font-weight: 700">Menteri Pendidikan dan Kebudayaan (2014—2016).</span></div>
+                </div>
+                <div class="py-[12px] flex gap-[12px] card-point items-center pr-[5px]">
+                    <div class="number">04</div>
+                    <div class="text">Garda terdepan pendidikan Indonesia menjadi <span style="font-weight: 700">Menteri Pendidikan dan Kebudayaan (2014—2016).</span></div>
+                </div>
+                <div class="py-[12px] flex gap-[12px] card-point items-center pr-[5px]">
+                    <div class="number">05</div>
+                    <div class="text">Garda terdepan pendidikan Indonesia menjadi <span style="font-weight: 700">Menteri Pendidikan dan Kebudayaan (2014—2016).</span></div>
+                </div>
+                <a href="#" class="z-10 cursor-pointer rounded-xl text-center md:w-fit p-2 px-5 bg-white text-teal-950 mt-5">Kontak Kami <img src=""></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="w-full flex justify-center py-10">
+    <div class="container md:px-10 w-full flex justify-center items-center relative">
+        <div class="bg-teal-950 w-full rounded-[30px] relative overflow-hidden md:flex text-white ">
+            <img src="./assets/paper-effect.webp" class="z-0 opacity-20 absolute w-full h-full" alt="">
+            <div class="md:order-last md:w-1/2 flex flex-col items-center justify-end relative pt-10">
+                <p class="text-center">Calon Jabatan</p>
+                <p class="text-center text-4xl">Lorem</p>
+                <p class="text-center text-2xl">Ipsum</p>
+                <p class="absolute bottom-10 text-lg text-center w-2/3">"Mewujudkan keadilan dan kesejahteraan bagi seluruh rakyat Indonesia"</p>
+                <img class="w-1/2" src="./assets/orang2.png" alt="">
+            </div>
+            <div class="md:w-1/2 py-10 px-16 flex flex-col items-center md:items-start justify-center section-right">
+                <div class="title z-[2]">5 Rekam Karya Penting</div>
+                <div class="fullname mb-5">Lorem Ipsum</div>
+                <div class="py-[12px] flex gap-[12px] card-point items-center pr-[5px]">
+                    <div class="number">01</div>
+                    <div class="text">Garda terdepan pendidikan Indonesia menjadi <span style="font-weight: 700">Menteri Pendidikan dan Kebudayaan (2014—2016).</span></div>
+                </div>
+                <div class="py-[12px] flex gap-[12px] card-point items-center pr-[5px]">
+                    <div class="number">02</div>
+                    <div class="text">Garda terdepan pendidikan Indonesia menjadi <span style="font-weight: 700">Menteri Pendidikan dan Kebudayaan (2014—2016).</span></div>
+                </div>
+                <div class="py-[12px] flex gap-[12px] card-point items-center pr-[5px]">
+                    <div class="number">03</div>
+                    <div class="text">Garda terdepan pendidikan Indonesia menjadi <span style="font-weight: 700">Menteri Pendidikan dan Kebudayaan (2014—2016).</span></div>
+                </div>
+                <div class="py-[12px] flex gap-[12px] card-point items-center pr-[5px]">
+                    <div class="number">04</div>
+                    <div class="text">Garda terdepan pendidikan Indonesia menjadi <span style="font-weight: 700">Menteri Pendidikan dan Kebudayaan (2014—2016).</span></div>
+                </div>
+                <div class="py-[12px] flex gap-[12px] card-point items-center pr-[5px]">
+                    <div class="number">05</div>
+                    <div class="text">Garda terdepan pendidikan Indonesia menjadi <span style="font-weight: 700">Menteri Pendidikan dan Kebudayaan (2014—2016).</span></div>
+                </div>
+                <a href="#" class="z-10 cursor-pointer rounded-xl text-center w-full md:w-fit p-2 px-5 bg-white text-teal-950 mt-5">Kontak Kami <img src=""></a>
+            </div>
+        </div>
+    </div>
 </div>
 
+<!-- BERITA & ARTIKEL SECTION -->
+
+<h1 class="hidden md:block font-bold text-center text-center text-3xl text-teal-800">Berita & Artikel Terbaru</h1>
+<div class="hidden md:block w-full flex justify-center py-10">
+    <div id="controls-carousel" class="container relative w-full" data-carousel="static">
+        <!-- Carousel wrapper -->
+        <div class="relative h-56 overflow-hidden rounded-lg md:h-80">
+             <!-- Item 1 -->
+            <div class="hidden duration-700 ease-in-out flex justify-center items-center md:px-10" data-carousel-item>
+                <div class="w-1/3 px-2 h-full">
+                    <div class="p-5 bg-white-300 border-2 border-gray-200 rounded-xl h-full w-full">
+                        <img class="w-full h-48 mb-3" src="./assets/berita-1.jpeg" alt="">
+                        <p class="text-sm text-gray-800">Judul Berita</p>
+                        <p class="text-xs text-gray-500 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus mauris eget ipsum imperdiet tincidunt. Etiam enim elit, varius eu ipsum vel, tempor auctor lectus. Phasellus volutpat urna vehicula nibh eleifend varius id quis nisi. Nulla facilisi. Suspendisse velit diam, euismod non nibh vitae, vestibulum tincidunt felis. Nullam sed lacus massa. In facilisis velit metus, vel porttitor lectus iaculis et.</p>
+                    </div>
+                </div>
+                <div class="w-1/3 px-2 h-full">
+                    <div class="p-5 bg-white-300 border-2 border-gray-200 rounded-xl h-full w-full">
+                        <img class="w-full h-48 mb-3" src="./assets/berita-2.jpeg" alt="">
+                        <p class="text-sm text-gray-800">Judul Berita</p>
+                        <p class="text-xs text-gray-500 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus mauris eget ipsum imperdiet tincidunt. Etiam enim elit, varius eu ipsum vel, tempor auctor lectus. Phasellus volutpat urna vehicula nibh eleifend varius id quis nisi. Nulla facilisi. Suspendisse velit diam, euismod non nibh vitae, vestibulum tincidunt felis. Nullam sed lacus massa. In facilisis velit metus, vel porttitor lectus iaculis et.</p>
+                    </div>
+                </div>
+                <div class="w-1/3 px-2 h-full">
+                    <div class="p-5 bg-white-300 border-2 border-gray-200 rounded-xl h-full w-full">
+                        <img class="w-full h-48 mb-3" src="./assets/berita-3.jpeg" alt="">
+                        <p class="text-sm text-gray-800">Judul Berita</p>
+                        <p class="text-xs text-gray-500 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus mauris eget ipsum imperdiet tincidunt. Etiam enim elit, varius eu ipsum vel, tempor auctor lectus. Phasellus volutpat urna vehicula nibh eleifend varius id quis nisi. Nulla facilisi. Suspendisse velit diam, euismod non nibh vitae, vestibulum tincidunt felis. Nullam sed lacus massa. In facilisis velit metus, vel porttitor lectus iaculis et.</p>
+                    </div>
+                </div>
+                <div class="w-1/3 px-2 h-full">
+                    <div class="p-5 bg-white-300 border-2 border-gray-200 rounded-xl h-full w-full">
+                        <img class="w-full h-48 mb-3" src="./assets/berita-1.jpeg" alt="">
+                        <p class="text-sm text-gray-800">Judul Berita</p>
+                        <p class="text-xs text-gray-500 line-clamp-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus mauris eget ipsum imperdiet tincidunt. Etiam enim elit, varius eu ipsum vel, tempor auctor lectus. Phasellus volutpat urna vehicula nibh eleifend varius id quis nisi. Nulla facilisi. Suspendisse velit diam, euismod non nibh vitae, vestibulum tincidunt felis. Nullam sed lacus massa. In facilisis velit metus, vel porttitor lectus iaculis et.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden duration-700 ease-in-out flex justify-center items-center md:px-10" data-carousel-item>
+                <div class="w-1/3 px-2 h-full">
+                    <div class="p-5 bg-white-300 border-2 border-gray-200 rounded-xl h-full w-full">
+                        <img class="w-full h-48 mb-3" src="./assets/berita-4.jpeg" alt="">
+                        <p class="text-sm text-gray-800">Judul Berita</p>
+                        <p class="text-xs text-gray-500 line-clamp-3">Lorem Ipsum dolor sit amet</p>
+                    </div>
+                </div>
+                <div class="w-1/3 px-2 h-full">
+                    <div class="p-5 bg-white-300 border-2 border-gray-200 rounded-xl h-full w-full">
+                        <img class="w-full h-48 mb-3" src="./assets/berita-5.jpeg" alt="">
+                        <p class="text-sm text-gray-800">Judul Berita</p>
+                        <p class="text-xs text-gray-500 line-clamp-3">Lorem Ipsum dolor sit amet</p>
+                    </div>
+                </div>
+                <div class="w-1/3 px-2 h-full">
+                    <div class="p-5 bg-white-300 border-2 border-gray-200 rounded-xl h-full w-full">
+                        <img class="w-full h-48 mb-3" src="./assets/berita-6.jpeg" alt="">
+                        <p class="text-sm text-gray-800">Judul Berita</p>
+                        <p class="text-xs text-gray-500 line-clamp-3">Lorem Ipsum dolor sit amet</p>
+                    </div>
+                </div>
+                <div class="w-1/3 px-2 h-full">
+                    <div class="p-5 bg-white-300 border-2 border-gray-200 rounded-xl h-full w-full">
+                        <img class="w-full h-48 mb-3" src="./assets/berita-3.jpeg" alt="">
+                        <p class="text-sm text-gray-800">Judul Berita</p>
+                        <p class="text-xs text-gray-500 line-clamp-3">Lorem Ipsum dolor sit amet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Slider controls -->
+        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-800/30 group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                </svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-800/30 group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                </svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>    
+</div>
+
+<!-- Footer -->
+<div class="w-full flex justify-center pt-20">
+    <div class="footer w-full py-10 rounded-t-[30px] bg-white">
+        <div class="container px-10 md:flex">
+            <div class="flex flex-col gap-5">
+                <div class="flex gap-[24px]">
+                    <img src="./assets/orang1footer.jpg" alt="" class="rounded-full w-20 h-20 object-cover" >
+                    <div class="flex flex-col">
+                        <div class="text-sm text-gray-400">Media Sosial</div>
+                        <div class="font-bold mb-2">LOREM IPSUM</div>
+                        <div class="flex gap-[12px]">
+                            <a target="_blank" href="https://www.facebook.com/aniesbaswedan"><img loading="lazy" width="32" height="32" src="data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.5'%20y='0.5'%20width='31'%20height='31'%20rx='15.5'%20stroke='%231A338E'/%3e%3cpath%20d='M14.0217%2023.3327L14.0007%2016.666H11.334V13.9993H14.0007V12.3327C14.0007%209.85842%2015.5329%208.66602%2017.7401%208.66602C18.7974%208.66602%2019.706%208.74473%2019.9708%208.77992V11.3657L18.44%2011.3664C17.2396%2011.3664%2017.0072%2011.9368%2017.0072%2012.7738V13.9993H20.5007L19.1673%2016.666H17.0072V23.3327H14.0217Z'%20fill='%231A338E'/%3e%3c/svg%3e" alt="icon facebook" class="cursor-pointer"></a>
+                            <a target="_blank" href="http://twitter.com/aniesbaswedan"><img loading="lazy" width="32" height="32" src="data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.5'%20y='0.5'%20width='31'%20height='31'%20rx='15.5'%20stroke='%231A338E'/%3e%3cpath%20d='M15.2277%2018.1013L10.9372%2023.0003H8.56067L14.1177%2016.6523L15.2277%2018.1013Z'%20fill='%231A338E'/%3e%3cpath%20d='M16.5255%2013.494L20.454%209H22.829L17.6255%2014.951L16.5255%2013.494Z'%20fill='%231A338E'/%3e%3cpath%20d='M23.744%2023H18.9645L8.25598%209H13.1565L23.744%2023ZM19.62%2021.5785H20.936L12.4415%2010.347H11.0295L19.62%2021.5785Z'%20fill='%231A338E'/%3e%3c/svg%3e" alt="icon x" class="cursor-pointer"></a>
+                            <a target="_blank" href="http://instagram.com/aniesbaswedan"><img loading="lazy" width="32" height="32" src="data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.5'%20y='0.5'%20width='31'%20height='31'%20rx='15.5'%20stroke='%231A338E'/%3e%3cg%20clip-path='url(%23clip0_1594_4379)'%3e%3cpath%20d='M16%209.441C18.136%209.441%2018.389%209.45%2019.233%209.488C19.7402%209.49409%2020.2425%209.58746%2020.718%209.764C21.0658%209.89248%2021.3802%2010.0975%2021.638%2010.364C21.9045%2010.6218%2022.1095%2010.9362%2022.238%2011.284C22.4145%2011.7595%2022.5079%2012.2618%2022.514%2012.769C22.552%2013.613%2022.561%2013.869%2022.561%2016.002C22.561%2018.135%2022.552%2018.391%2022.514%2019.235C22.5079%2019.7422%2022.4145%2020.2445%2022.238%2020.72C22.1052%2021.0651%2021.9015%2021.3785%2021.64%2021.64C21.3785%2021.9015%2021.0651%2022.1052%2020.72%2022.238C20.2445%2022.4145%2019.7422%2022.5079%2019.235%2022.514C18.391%2022.552%2018.135%2022.561%2016.002%2022.561C13.869%2022.561%2013.613%2022.552%2012.769%2022.514C12.2618%2022.5079%2011.7595%2022.4145%2011.284%2022.238C10.9362%2022.1095%2010.6218%2021.9045%2010.364%2021.638C10.0975%2021.3802%209.89248%2021.0658%209.764%2020.718C9.58746%2020.2425%209.49409%2019.7402%209.488%2019.233C9.45%2018.389%209.441%2018.133%209.441%2016C9.441%2013.867%209.45%2013.611%209.488%2012.767C9.49409%2012.2598%209.58746%2011.7575%209.764%2011.282C9.89248%2010.9342%2010.0975%2010.6198%2010.364%2010.362C10.6218%2010.0955%2010.9362%209.89048%2011.284%209.762C11.7595%209.58546%2012.2618%209.49209%2012.769%209.486C13.613%209.448%2013.869%209.439%2016.002%209.439M16%208C13.827%208%2013.555%208.009%2012.7%208.048C12.037%208.06148%2011.381%208.18727%2010.76%208.42C10.226%208.62056%209.74231%208.9356%209.343%209.343C8.9356%209.74231%208.62056%2010.226%208.42%2010.76C8.18727%2011.381%208.06148%2012.037%208.048%2012.7C8.009%2013.555%208%2013.827%208%2016C8%2018.173%208.009%2018.445%208.048%2019.3C8.06148%2019.963%208.18727%2020.619%208.42%2021.24C8.62056%2021.774%208.9356%2022.2577%209.343%2022.657C9.74231%2023.0644%2010.226%2023.3794%2010.76%2023.58C11.3816%2023.813%2012.0383%2023.9387%2012.702%2023.952C13.555%2023.991%2013.827%2024%2016%2024C18.173%2024%2018.445%2023.991%2019.3%2023.952C19.9637%2023.9387%2020.6204%2023.813%2021.242%2023.58C21.7734%2023.3743%2022.256%2023.0599%2022.659%2022.657C23.0619%2022.254%2023.3763%2021.7714%2023.582%2021.24C23.815%2020.6184%2023.9407%2019.9617%2023.954%2019.298C23.993%2018.445%2024.002%2018.173%2024.002%2015.998C24.002%2013.823%2023.993%2013.553%2023.954%2012.698C23.9397%2012.0355%2023.8132%2011.3802%2023.58%2010.76C23.3794%2010.226%2023.0644%209.74231%2022.657%209.343C22.2577%208.9356%2021.774%208.62056%2021.24%208.42C20.619%208.18727%2019.963%208.06148%2019.3%208.048C18.445%208.009%2018.173%208%2016%208Z'%20fill='%231A338E'/%3e%3cpath%20d='M16.0006%2011.8926C15.1881%2011.8926%2014.3939%2012.1335%2013.7183%2012.5849C13.0427%2013.0363%2012.5162%2013.6779%2012.2053%2014.4285C11.8944%2015.1792%2011.813%2016.0051%2011.9715%2016.802C12.13%2017.5989%2012.5213%2018.3309%2013.0958%2018.9054C13.6703%2019.4799%2014.4023%2019.8711%2015.1991%2020.0296C15.996%2020.1882%2016.822%2020.1068%2017.5726%2019.7959C18.3233%2019.4849%2018.9649%2018.9584%2019.4163%2018.2829C19.8676%2017.6073%2020.1086%2016.8131%2020.1086%2016.0006C20.1086%2015.4611%2020.0023%2014.9269%2019.7959%2014.4285C19.5894%2013.9301%2019.2868%2013.4772%2018.9054%2013.0958C18.5239%2012.7143%2018.071%2012.4117%2017.5726%2012.2053C17.0742%2011.9988%2016.5401%2011.8926%2016.0006%2011.8926ZM16.0006%2018.6676C15.4731%2018.6676%2014.9575%2018.5112%2014.5189%2018.2181C14.0803%2017.9251%2013.7385%2017.5085%2013.5366%2017.0212C13.3347%2016.5339%2013.2819%2015.9976%2013.3848%2015.4803C13.4877%2014.9629%2013.7417%2014.4877%2014.1147%2014.1147C14.4877%2013.7417%2014.9629%2013.4877%2015.4803%2013.3848C15.9976%2013.2819%2016.5339%2013.3347%2017.0212%2013.5366C17.5085%2013.7385%2017.9251%2014.0803%2018.2181%2014.5189C18.5112%2014.9575%2018.6676%2015.4731%2018.6676%2016.0006C18.6676%2016.7079%2018.3866%2017.3863%2017.8864%2017.8864C17.3863%2018.3866%2016.7079%2018.6676%2016.0006%2018.6676Z'%20fill='%231A338E'/%3e%3cpath%20d='M20.2705%2012.6895C20.8007%2012.6895%2021.2305%2012.2597%2021.2305%2011.7295C21.2305%2011.1993%2020.8007%2010.7695%2020.2705%2010.7695C19.7404%2010.7695%2019.3105%2011.1993%2019.3105%2011.7295C19.3105%2012.2597%2019.7404%2012.6895%2020.2705%2012.6895Z'%20fill='%231A338E'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1594_4379'%3e%3crect%20width='16'%20height='16'%20fill='white'%20transform='translate(8%208)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" alt="icon instagram" class="cursor-pointer"></a>
+                            <a target="_blank" href="https://www.youtube.com/@aniesbaswedan"><img loading="lazy" width="32" height="32" src="data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.5'%20y='0.5'%20width='31'%20height='31'%20rx='15.5'%20stroke='%231A338E'/%3e%3cpath%20d='M23.8%2012.8C23.6%2011.5%2023%2010.6%2021.6%2010.4C19.4%2010%2016%2010%2016%2010C16%2010%2012.6%2010%2010.4%2010.4C9%2010.6%208.3%2011.5%208.2%2012.8C8%2014.1%208%2016%208%2016C8%2016%208%2017.9%208.2%2019.2C8.4%2020.5%209%2021.4%2010.4%2021.6C12.6%2022%2016%2022%2016%2022C16%2022%2019.4%2022%2021.6%2021.6C23%2021.3%2023.6%2020.5%2023.8%2019.2C24%2017.9%2024%2016%2024%2016C24%2016%2024%2014.1%2023.8%2012.8ZM14%2019V13L19%2016L14%2019Z'%20fill='%231A338E'/%3e%3c/svg%3e" alt="icon youtube" class="cursor-pointer"></a>
+                            <a target="_blank" href="https://www.tiktok.com/@aniesbaswedan"><img loading="lazy" width="32" height="32" src="data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.5'%20y='0.5'%20width='31'%20height='31'%20rx='15.5'%20stroke='%231A338E'/%3e%3cpath%20d='M14.793%2013.958V16.706C14.4469%2016.6147%2014.0847%2016.6023%2013.7332%2016.6696C13.3817%2016.7369%2013.0497%2016.8822%2012.7618%2017.0949C12.4739%2017.3076%2012.2374%2017.5821%2012.0697%2017.8983C11.9021%2018.2146%2011.8075%2018.5644%2011.793%2018.922C11.7726%2019.2303%2011.8186%2019.5395%2011.9277%2019.8285C12.0369%2020.1176%2012.2067%2020.38%2012.4258%2020.5979C12.6449%2020.8158%2012.9081%2020.9843%2013.1978%2021.092C13.4874%2021.1996%2013.7968%2021.244%2014.105%2021.222C14.4158%2021.2456%2014.728%2021.2015%2015.0202%2021.0928C15.3123%2020.984%2015.5773%2020.8132%2015.797%2020.5921C16.0167%2020.371%2016.1858%2020.1048%2016.2927%2019.812C16.3996%2019.5192%2016.4416%2019.2067%2016.416%2018.896V8H19.135C19.598%2010.876%2021.035%2011.544%2022.962%2011.852V14.608C21.6273%2014.4989%2020.3397%2014.0642%2019.212%2013.342V18.787C19.21%2021.25%2017.75%2024%2014.125%2024C13.445%2023.9969%2012.7726%2023.8581%2012.1469%2023.5918C11.5213%2023.3255%2010.9551%2022.937%2010.4816%2022.4491C10.008%2021.9612%209.63655%2021.3836%209.38901%2020.7503C9.14148%2020.1171%209.02282%2019.4407%209.03999%2018.761C9.06137%2018.0531%209.23257%2017.3579%209.54231%2016.721C9.85205%2016.0842%2010.2933%2015.5202%2010.8369%2015.0664C11.3805%2014.6125%2012.0142%2014.2791%2012.6961%2014.088C13.378%2013.897%2014.0927%2013.8527%2014.793%2013.958Z'%20fill='%231A338E'/%3e%3c/svg%3e" alt="icon tiktok" class="cursor-pointer"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-[24px]">
+                    <img src="./assets/orang2footer.jpg" alt="" class="rounded-full w-20 h-20 object-cover" >
+                    <div class="flex flex-col">
+                        <div class="text-sm text-gray-400">Media Sosial</div>
+                        <div class="font-bold mb-2">LOREM IPSUM</div>
+                        <div class="flex gap-[12px]">
+                            <a target="_blank" href="https://www.facebook.com/aniesbaswedan"><img loading="lazy" width="32" height="32" src="data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.5'%20y='0.5'%20width='31'%20height='31'%20rx='15.5'%20stroke='%231A338E'/%3e%3cpath%20d='M14.0217%2023.3327L14.0007%2016.666H11.334V13.9993H14.0007V12.3327C14.0007%209.85842%2015.5329%208.66602%2017.7401%208.66602C18.7974%208.66602%2019.706%208.74473%2019.9708%208.77992V11.3657L18.44%2011.3664C17.2396%2011.3664%2017.0072%2011.9368%2017.0072%2012.7738V13.9993H20.5007L19.1673%2016.666H17.0072V23.3327H14.0217Z'%20fill='%231A338E'/%3e%3c/svg%3e" alt="icon facebook" class="cursor-pointer"></a>
+                            <a target="_blank" href="http://twitter.com/aniesbaswedan"><img loading="lazy" width="32" height="32" src="data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.5'%20y='0.5'%20width='31'%20height='31'%20rx='15.5'%20stroke='%231A338E'/%3e%3cpath%20d='M15.2277%2018.1013L10.9372%2023.0003H8.56067L14.1177%2016.6523L15.2277%2018.1013Z'%20fill='%231A338E'/%3e%3cpath%20d='M16.5255%2013.494L20.454%209H22.829L17.6255%2014.951L16.5255%2013.494Z'%20fill='%231A338E'/%3e%3cpath%20d='M23.744%2023H18.9645L8.25598%209H13.1565L23.744%2023ZM19.62%2021.5785H20.936L12.4415%2010.347H11.0295L19.62%2021.5785Z'%20fill='%231A338E'/%3e%3c/svg%3e" alt="icon x" class="cursor-pointer"></a>
+                            <a target="_blank" href="http://instagram.com/aniesbaswedan"><img loading="lazy" width="32" height="32" src="data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.5'%20y='0.5'%20width='31'%20height='31'%20rx='15.5'%20stroke='%231A338E'/%3e%3cg%20clip-path='url(%23clip0_1594_4379)'%3e%3cpath%20d='M16%209.441C18.136%209.441%2018.389%209.45%2019.233%209.488C19.7402%209.49409%2020.2425%209.58746%2020.718%209.764C21.0658%209.89248%2021.3802%2010.0975%2021.638%2010.364C21.9045%2010.6218%2022.1095%2010.9362%2022.238%2011.284C22.4145%2011.7595%2022.5079%2012.2618%2022.514%2012.769C22.552%2013.613%2022.561%2013.869%2022.561%2016.002C22.561%2018.135%2022.552%2018.391%2022.514%2019.235C22.5079%2019.7422%2022.4145%2020.2445%2022.238%2020.72C22.1052%2021.0651%2021.9015%2021.3785%2021.64%2021.64C21.3785%2021.9015%2021.0651%2022.1052%2020.72%2022.238C20.2445%2022.4145%2019.7422%2022.5079%2019.235%2022.514C18.391%2022.552%2018.135%2022.561%2016.002%2022.561C13.869%2022.561%2013.613%2022.552%2012.769%2022.514C12.2618%2022.5079%2011.7595%2022.4145%2011.284%2022.238C10.9362%2022.1095%2010.6218%2021.9045%2010.364%2021.638C10.0975%2021.3802%209.89248%2021.0658%209.764%2020.718C9.58746%2020.2425%209.49409%2019.7402%209.488%2019.233C9.45%2018.389%209.441%2018.133%209.441%2016C9.441%2013.867%209.45%2013.611%209.488%2012.767C9.49409%2012.2598%209.58746%2011.7575%209.764%2011.282C9.89248%2010.9342%2010.0975%2010.6198%2010.364%2010.362C10.6218%2010.0955%2010.9362%209.89048%2011.284%209.762C11.7595%209.58546%2012.2618%209.49209%2012.769%209.486C13.613%209.448%2013.869%209.439%2016.002%209.439M16%208C13.827%208%2013.555%208.009%2012.7%208.048C12.037%208.06148%2011.381%208.18727%2010.76%208.42C10.226%208.62056%209.74231%208.9356%209.343%209.343C8.9356%209.74231%208.62056%2010.226%208.42%2010.76C8.18727%2011.381%208.06148%2012.037%208.048%2012.7C8.009%2013.555%208%2013.827%208%2016C8%2018.173%208.009%2018.445%208.048%2019.3C8.06148%2019.963%208.18727%2020.619%208.42%2021.24C8.62056%2021.774%208.9356%2022.2577%209.343%2022.657C9.74231%2023.0644%2010.226%2023.3794%2010.76%2023.58C11.3816%2023.813%2012.0383%2023.9387%2012.702%2023.952C13.555%2023.991%2013.827%2024%2016%2024C18.173%2024%2018.445%2023.991%2019.3%2023.952C19.9637%2023.9387%2020.6204%2023.813%2021.242%2023.58C21.7734%2023.3743%2022.256%2023.0599%2022.659%2022.657C23.0619%2022.254%2023.3763%2021.7714%2023.582%2021.24C23.815%2020.6184%2023.9407%2019.9617%2023.954%2019.298C23.993%2018.445%2024.002%2018.173%2024.002%2015.998C24.002%2013.823%2023.993%2013.553%2023.954%2012.698C23.9397%2012.0355%2023.8132%2011.3802%2023.58%2010.76C23.3794%2010.226%2023.0644%209.74231%2022.657%209.343C22.2577%208.9356%2021.774%208.62056%2021.24%208.42C20.619%208.18727%2019.963%208.06148%2019.3%208.048C18.445%208.009%2018.173%208%2016%208Z'%20fill='%231A338E'/%3e%3cpath%20d='M16.0006%2011.8926C15.1881%2011.8926%2014.3939%2012.1335%2013.7183%2012.5849C13.0427%2013.0363%2012.5162%2013.6779%2012.2053%2014.4285C11.8944%2015.1792%2011.813%2016.0051%2011.9715%2016.802C12.13%2017.5989%2012.5213%2018.3309%2013.0958%2018.9054C13.6703%2019.4799%2014.4023%2019.8711%2015.1991%2020.0296C15.996%2020.1882%2016.822%2020.1068%2017.5726%2019.7959C18.3233%2019.4849%2018.9649%2018.9584%2019.4163%2018.2829C19.8676%2017.6073%2020.1086%2016.8131%2020.1086%2016.0006C20.1086%2015.4611%2020.0023%2014.9269%2019.7959%2014.4285C19.5894%2013.9301%2019.2868%2013.4772%2018.9054%2013.0958C18.5239%2012.7143%2018.071%2012.4117%2017.5726%2012.2053C17.0742%2011.9988%2016.5401%2011.8926%2016.0006%2011.8926ZM16.0006%2018.6676C15.4731%2018.6676%2014.9575%2018.5112%2014.5189%2018.2181C14.0803%2017.9251%2013.7385%2017.5085%2013.5366%2017.0212C13.3347%2016.5339%2013.2819%2015.9976%2013.3848%2015.4803C13.4877%2014.9629%2013.7417%2014.4877%2014.1147%2014.1147C14.4877%2013.7417%2014.9629%2013.4877%2015.4803%2013.3848C15.9976%2013.2819%2016.5339%2013.3347%2017.0212%2013.5366C17.5085%2013.7385%2017.9251%2014.0803%2018.2181%2014.5189C18.5112%2014.9575%2018.6676%2015.4731%2018.6676%2016.0006C18.6676%2016.7079%2018.3866%2017.3863%2017.8864%2017.8864C17.3863%2018.3866%2016.7079%2018.6676%2016.0006%2018.6676Z'%20fill='%231A338E'/%3e%3cpath%20d='M20.2705%2012.6895C20.8007%2012.6895%2021.2305%2012.2597%2021.2305%2011.7295C21.2305%2011.1993%2020.8007%2010.7695%2020.2705%2010.7695C19.7404%2010.7695%2019.3105%2011.1993%2019.3105%2011.7295C19.3105%2012.2597%2019.7404%2012.6895%2020.2705%2012.6895Z'%20fill='%231A338E'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_1594_4379'%3e%3crect%20width='16'%20height='16'%20fill='white'%20transform='translate(8%208)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" alt="icon instagram" class="cursor-pointer"></a>
+                            <a target="_blank" href="https://www.youtube.com/@aniesbaswedan"><img loading="lazy" width="32" height="32" src="data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.5'%20y='0.5'%20width='31'%20height='31'%20rx='15.5'%20stroke='%231A338E'/%3e%3cpath%20d='M23.8%2012.8C23.6%2011.5%2023%2010.6%2021.6%2010.4C19.4%2010%2016%2010%2016%2010C16%2010%2012.6%2010%2010.4%2010.4C9%2010.6%208.3%2011.5%208.2%2012.8C8%2014.1%208%2016%208%2016C8%2016%208%2017.9%208.2%2019.2C8.4%2020.5%209%2021.4%2010.4%2021.6C12.6%2022%2016%2022%2016%2022C16%2022%2019.4%2022%2021.6%2021.6C23%2021.3%2023.6%2020.5%2023.8%2019.2C24%2017.9%2024%2016%2024%2016C24%2016%2024%2014.1%2023.8%2012.8ZM14%2019V13L19%2016L14%2019Z'%20fill='%231A338E'/%3e%3c/svg%3e" alt="icon youtube" class="cursor-pointer"></a>
+                            <a target="_blank" href="https://www.tiktok.com/@aniesbaswedan"><img loading="lazy" width="32" height="32" src="data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='0.5'%20y='0.5'%20width='31'%20height='31'%20rx='15.5'%20stroke='%231A338E'/%3e%3cpath%20d='M14.793%2013.958V16.706C14.4469%2016.6147%2014.0847%2016.6023%2013.7332%2016.6696C13.3817%2016.7369%2013.0497%2016.8822%2012.7618%2017.0949C12.4739%2017.3076%2012.2374%2017.5821%2012.0697%2017.8983C11.9021%2018.2146%2011.8075%2018.5644%2011.793%2018.922C11.7726%2019.2303%2011.8186%2019.5395%2011.9277%2019.8285C12.0369%2020.1176%2012.2067%2020.38%2012.4258%2020.5979C12.6449%2020.8158%2012.9081%2020.9843%2013.1978%2021.092C13.4874%2021.1996%2013.7968%2021.244%2014.105%2021.222C14.4158%2021.2456%2014.728%2021.2015%2015.0202%2021.0928C15.3123%2020.984%2015.5773%2020.8132%2015.797%2020.5921C16.0167%2020.371%2016.1858%2020.1048%2016.2927%2019.812C16.3996%2019.5192%2016.4416%2019.2067%2016.416%2018.896V8H19.135C19.598%2010.876%2021.035%2011.544%2022.962%2011.852V14.608C21.6273%2014.4989%2020.3397%2014.0642%2019.212%2013.342V18.787C19.21%2021.25%2017.75%2024%2014.125%2024C13.445%2023.9969%2012.7726%2023.8581%2012.1469%2023.5918C11.5213%2023.3255%2010.9551%2022.937%2010.4816%2022.4491C10.008%2021.9612%209.63655%2021.3836%209.38901%2020.7503C9.14148%2020.1171%209.02282%2019.4407%209.03999%2018.761C9.06137%2018.0531%209.23257%2017.3579%209.54231%2016.721C9.85205%2016.0842%2010.2933%2015.5202%2010.8369%2015.0664C11.3805%2014.6125%2012.0142%2014.2791%2012.6961%2014.088C13.378%2013.897%2014.0927%2013.8527%2014.793%2013.958Z'%20fill='%231A338E'/%3e%3c/svg%3e" alt="icon tiktok" class="cursor-pointer"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full mt-10 md:mt-0 text-center md:text-left md:flex gap-36 justify-end md:pr-10">
+                <div>
+                    <p class="text-gray-400">Informasi</p>
+                    <p><a href="#">Lorem Ipsum</a></p>
+                    <p><a href="#">Lorem Ipsum</a></p>
+                    <p><a href="#">Lorem Ipsum</a></p>
+                    <p><a href="#">Lorem Ipsum</a></p>
+                </div>
+                <div class="mb-5 md:mb-0">          
+                    <p class="text-gray-400">&nbsp;</p> 
+                    <p><a href="#">Tentang Kami</a></p>
+                    <p><a href="#">Informasi</a></p>
+                    <p><a href="#">Media</a></p>
+                </div>
+                <div>           
+                    <p class="text-gray-400">Media</p>
+                    <p><a href="#">Foto</a></p>
+                    <p><a href="#">Video</a></p>
+                </div>
+            </div>  
+        </div>
+        <div class="container pt-10 px-10 flex flex-col md:flex-row items-center">
+            <img src="./assets/logo.png" class="w-40" alt="logo">
+            <div class="flex-1 ml-5 border-t pt-2 text-center border-gray-300 text-gray-400" title="">©2024 AMINAJADULU</div>
+        </div>
+    </div>
+</div>
+
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

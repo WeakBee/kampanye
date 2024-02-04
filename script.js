@@ -1,12 +1,9 @@
-$(document).ready(function(){
-    var navbar = $('#navbar');
-    var sticky = navbar.offset().top;
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
 
-    $(window).scroll(function() {
-        if ($(window).scrollTop() >= sticky) {
-            navbar.addClass('fixed');
-        } else {
-            navbar.removeClass('fixed');
-        }
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
 });
