@@ -22,6 +22,7 @@
         }
       </script>
     <link rel="stylesheet" href="./style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -82,7 +83,7 @@
                     </div>
                 </li>
                 <li class="hidden md:block">
-                    <img src="./assets/logo.png" alt="logo" class="w-20">
+                    <img src="./assets/logo.png" alt="logo" class="w-16">
                 </li>
                 <li>
                     <button id="dropdownNavbarLink2" data-dropdown-toggle="dropdownNavbar2"
@@ -148,18 +149,55 @@
 <!-- NAVBAR -->
 
 <div class="w-full flex justify-center">
-    <div class="container w-full flex justify-center items-end relative md:pt-10">
-        <img class="-z-10 absolute w-full opacity-10" src="./assets/peta.png" alt="Peta Indonesia">
-        <div class="absolute z-10 bottom-0 w-full h-20 bg-gradient-to-t from-white"></div>
-        <div class="absolute left-0 h-full w-20 bg-gradient-to-r from-white"></div>
-        <div class="absolute right-0 h-full w-20 bg-gradient-to-l from-white"></div>
-        <img class="transition origin-bottom duration-300 relative h-2/4 md:h-3/4 hover:scale-110" src="./assets/orang1.png" alt="">
-        <img class="transition origin-bottom duration-300 relative h-2/4 md:h-3/4 hover:scale-110" src="./assets/orang2.png" alt="">
-        <div class="absolute p-2 glassmorphism bottom-72 md:bottom-44 text-right left-0 md:left-1/4">
+    <div class="overflow-hidden container w-full flex justify-center items-end relative md:pt-10">
+        <div id="controls-carousel" class="z-10 absolute w-full h-full" data-carousel="slide">
+            <!-- Carousel wrapper (MINIMAL 4 GAMBAR)-->
+            <div class="relative h-full overflow-hidden rounded-lg">
+                <!-- Item 1 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="./assets/peta.png" class="opacity-10 absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 2 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                    <img src="./assets/bekasi-background.jpg" class="opacity-10 absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 3 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="./assets/peta.png" class="opacity-10 absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 4 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="./assets/bekasi-background.jpg" class="opacity-10 absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+            </div>
+            <!-- Slider controls -->
+            <button type="button" class="flex start-28 md:start-16 absolute md:top-0 -top-32 start-0 z-30 items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primarycolor2 group-hover:primarycolor1 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                    </svg>
+                    <span class="sr-only">Previous</span>
+                </span>
+            </button>
+            <button type="button" class="flex end-28 md:end-16 absolute md:top-0 -top-32 end-0 z-30 items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primarycolor2 group-hover:primarycolor1 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                    </svg>
+                    <span class="sr-only">Next</span>
+                </span>
+            </button>
+        </div>
+        <div class="absolute z-40 bottom-0 w-full h-20 bg-gradient-to-t from-white"></div>
+        <div class="absolute z-20 left-0 h-full w-20 bg-gradient-to-r from-white"></div>
+        <div class="absolute z-20 right-0 h-full w-20 bg-gradient-to-l from-white"></div>
+        <img data-aos="zoom-in-up" data-aos-duration="1500" class="duration-300 z-30 relative h-2/4 md:h-3/4" src="./assets/orang1.png" alt="">
+        <img data-aos="zoom-in-up" data-aos-duration="1500" class="duration-300 z-30 relative h-2/4 md:h-3/4" src="./assets/orang2.png" alt="">
+        <div data-aos="flip-left" data-aos-duration="1500" class="absolute p-2 z-30 glassmorphism bottom-72 md:bottom-44 text-right left-5 md:left-1/4 text-xs md:text-base">
             <p class="font-bold">Jabatan</p>
             <p>Nama Orang 1</p>
         </div>
-        <div class="absolute p-2 glassmorphism bottom-72 md:bottom-44 right-0 md:right-1/4">
+        <div data-aos="flip-right" data-aos-duration="1500" class="absolute p-2 z-30 glassmorphism bottom-72 md:bottom-44 right-5 md:right-1/4 text-xs md:text-base">
             <p class="font-bold">Jabatan</p>
             <p>Nama Orang 2</p>
         </div>
@@ -180,8 +218,8 @@
                 <p class="text-center">Calon Jabatan</p>
                 <p class="text-center text-4xl">Lorem</p>
                 <p class="text-center text-2xl">Ipsum</p>
-                <p class="absolute bottom-10 text-lg text-center w-2/3">"Mewujudkan keadilan dan kesejahteraan bagi seluruh rakyat Indonesia"</p>
-                <img class="w-1/2" src="./assets/orang1.png" alt="">
+                <p class="absolute bottom-10 text-lg text-center w-2/3 z-10">"Mewujudkan keadilan dan kesejahteraan bagi seluruh rakyat Indonesia"</p>
+                <img data-aos="zoom-in-up" data-aos-duration="1500" class="w-1/2" src="./assets/orang1.png" alt="">
             </div>
             <div class="w-full md:w-1/2 py-10 px-10 md:px-16 flex flex-col items-center md:items-start justify-center section-right">
                 <div class="title z-[2]">5 Rekam Karya Penting</div>
@@ -219,8 +257,8 @@
                 <p class="text-center">Calon Jabatan</p>
                 <p class="text-center text-4xl">Lorem</p>
                 <p class="text-center text-2xl">Ipsum</p>
-                <p class="absolute bottom-10 text-lg text-center w-2/3">"Mewujudkan keadilan dan kesejahteraan bagi seluruh rakyat Indonesia"</p>
-                <img class="w-1/2" src="./assets/orang2.png" alt="">
+                <p class="absolute bottom-10 text-lg text-center w-2/3 z-10">"Mewujudkan keadilan dan kesejahteraan bagi seluruh rakyat Indonesia"</p>
+                <img data-aos="zoom-in-up" data-aos-duration="1500" class="w-1/2" src="./assets/orang2.png" alt="">
             </div>
             <div class="md:w-1/2 py-10 px-10 md:px-16 flex flex-col items-center md:items-start justify-center section-right">
                 <div class="title z-[2]">5 Rekam Karya Penting</div>
@@ -377,6 +415,10 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 <script src="script.js"></script>
 </body>
 </html>
