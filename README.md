@@ -1,4 +1,4 @@
-# kormi-project-frontend2
+# kormi-pojects-frontend
 
 
 
@@ -15,14 +15,14 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin https://gitlab.com/rachmat.fullstack/kormi-project-frontend2.git
+git remote add origin https://gitlab.com/rachmat.fullstack/kormi-pojects-frontend.git
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
-- [ ] [Set up project integrations](https://gitlab.com/rachmat.fullstack/kormi-project-frontend2/-/settings/integrations)
+- [ ] [Set up project integrations](https://gitlab.com/rachmat.fullstack/kormi-pojects-frontend/-/settings/integrations)
 
 ## Collaborate with your team
 
