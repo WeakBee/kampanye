@@ -65,4 +65,12 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function() {
+    $("#button-nav-responsive").click(function() {
+        $("#sidebar-responsive").toggleClass("translate-x-full");
+    });
 
+    $("#close-sidebar-responsive").click(function() {
+        $("#sidebar-responsive").toggleClass("translate-x-full");
+    });
+});

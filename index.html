@@ -35,9 +35,9 @@
         </a>
         <p class="md:hidden text-white font-bold">KORMI KOTA BEKASI</p>
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-            <button data-collapse-toggle="navbar-sticky" type="button"
+            <button id="button-nav-responsive" type="button"
                 class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-primarytext2 rounded-lg md:hidden hover:bg-primarycolor2 focus:outline-none focus:ring-2 focus:ring-gray-200"
-                aria-controls="navbar-sticky" aria-expanded="false">
+                aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
                 <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                     viewBox="0 0 17 14">
@@ -46,9 +46,19 @@
                 </svg>
             </button>
         </div>
-        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+    </div>
+</nav>
+<nav id="sidebar-responsive" class="transition z-50 bg-gradient-to-r from-primarycolor1 to-primarycolor2 fixed w-full h-full md:h-fit z-20 top-0 -start-full md:start-0">
+    <div class="max-w-screen-xl md:h-fit h-full flex flex-wrap items-center justify-between md:justify-center mx-auto p-4">
+        <div class="items-center justify-between w-full h-full md:flex md:w-auto md:order-1">
+            <div class="md:hidden flex items-center w-full">
+                <a href="./" class="md:hidden flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="./assets/logo.png" class="h-10" alt="Kormi Kota Bekasi Logo">
+                </a>
+                <p id="close-sidebar-responsive" class="w-full md:hidden cursor-pointer text-right font-bold text-white mr-3">X</p>
+            </div>
             <ul
-                class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-20 rtl:space-x-reverse md:flex-row md:items-center md:justify-center md:mt-0 md:border-0">
+                class="h-full md:h-fit flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-20 rtl:space-x-reverse md:flex-row md:items-center md:justify-center md:mt-0 md:border-0">
                 <li>
                     <a href="./" class="block py-2 px-3 text-white rounded md:bg-transparent md:p-0"
                         aria-current="page">Beranda</a>
@@ -155,20 +165,20 @@
             <!-- Carousel wrapper (MINIMAL 4 GAMBAR)-->
             <div class="relative h-full overflow-hidden rounded-lg">
                 <!-- Item 1 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="./assets/peta.png" class="opacity-10 absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <div class="hidden duration-700 ease-in-out h-full" data-carousel-item>
+                    <img src="./assets/peta.png" class="object-cover opacity-10 absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
                 <!-- Item 2 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                    <img src="./assets/bekasi-background.jpg" class="opacity-10 absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <div class="hidden duration-700 ease-in-out h-full" data-carousel-item="active">
+                    <img src="./assets/bekasi-background.jpg" class="object-cover opacity-10 absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
                 <!-- Item 3 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="./assets/peta.png" class="opacity-10 absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <div class="hidden duration-700 ease-in-out h-full" data-carousel-item>
+                    <img src="./assets/peta.png" class="object-cover opacity-10 absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
                 <!-- Item 4 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="./assets/bekasi-background.jpg" class="opacity-10 absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <div class="hidden duration-700 ease-in-out h-full" data-carousel-item>
+                    <img src="./assets/bekasi-background.jpg" class="object-cover opacity-10 absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
             </div>
             <!-- Slider controls -->
