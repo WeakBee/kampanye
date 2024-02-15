@@ -8,6 +8,17 @@
     font-weight: bold;
     color: white;
 }
+
+@media screen and (max-width: 480px) {
+    .titlefordropdown{
+        text-align: center;
+        font-size: 2rem;
+        padding: 0px 40px;
+        font-weight: bold;
+        color: white;
+    }
+}
+
 .titlefordropdown2{
     text-align: center;
     font-size: 1.8rem;
@@ -54,7 +65,7 @@
     text-align: center;
 }
 .super-table{
-    background-color: #F94546;
+    background: linear-gradient(315deg, rgba(92,22,71,1) 0%, rgba(249,69,70,1) 100%);
     color: white;
 }
 

@@ -26,8 +26,8 @@ $(document).ready(function () {
 
 
 $(document).ready(function(){
-    $(".grid img").click(function(){
-        var imgSrc = $(this).attr("src");
+    $(".foto-grid").click(function(){
+        var imgSrc = $(this).find("img").attr("src");
         $("#modalImg").attr("src", imgSrc);
         $("#myModal").css("display", "block");
     });
@@ -62,5 +62,15 @@ $(document).ready(function(){
                 $(this).hide();
             }
         });
+    });
+});
+
+$(document).ready(function() {
+    $("#button-nav-responsive").click(function() {
+        $("#sidebar-responsive").toggleClass("translate-x-full");
+    });
+
+    $("#close-sidebar-responsive").click(function() {
+        $("#sidebar-responsive").toggleClass("translate-x-full");
     });
 });
