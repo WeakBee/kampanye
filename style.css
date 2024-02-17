@@ -174,3 +174,30 @@
 .arrow-animation {
     animation: arrowAnimation 2s ease-in-out infinite;
 }
+
+.carousel-container {
+    overflow-x: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    width: 100%;
+    margin-right: 1px; /* Jarak antar kartu */
+}
+
+.carousel-item:last-child {
+    margin-right: 0; /* Menghilangkan margin pada elemen terakhir */
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+}

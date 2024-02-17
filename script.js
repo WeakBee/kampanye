@@ -74,3 +74,53 @@ $(document).ready(function() {
         $("#sidebar-responsive").toggleClass("translate-x-full");
     });
 });
+
+$(document).ready(function () {
+    let cardWidth = $('.carousel-item').outerWidth(true);
+    let totalCards = $('.carousel-item').length;
+    let visibleCards = Math.floor($('.carousel-container').width() / cardWidth);
+    let currentPosition = 0;
+
+    // Function to handle carousel movement
+    function moveCarousel(direction) {
+        let newPosition;
+
+        if (direction === "next") {
+            newPosition = Math.min(currentPosition + 1, totalCards - visibleCards -1);
+        } else {
+            newPosition = Math.max(currentPosition - 1, 0);
+        }
+
+        $('.carousel-track').css('transform', 'translateX(' + -1 * newPosition * cardWidth + 'px)');
+        currentPosition = newPosition;
+    }
+
+    // Initial call to adjust carousel on page load
+    moveCarousel();
+
+    // Recalculate carousel on window resize
+    $(window).resize(function () {
+        cardWidth = $('.carousel-item').outerWidth(true);
+        totalCards = $('.carousel-item').length;
+        visibleCards = Math.floor($('.carousel-container').width() / cardWidth);
+        moveCarousel();
+    });
+
+    // Navigation controls
+    $('#carouselNext').click(function () {
+        moveCarousel("next");
+    });
+
+    $('#carouselPrev').click(function () {
+        moveCarousel("prev");
+    });
+});
+
+$(document).ready(function(){
+    $("#searchInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $(".berkas-judul").filter(function() {
+        $(this).parents(".bg-white")[0].style.display = $(this).text().toLowerCase().indexOf(value) > -1 ? "" : "none";
+      });
+    });
+  });
