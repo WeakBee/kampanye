@@ -1,3 +1,32 @@
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+            primarycolor1: '#5C1647',
+            primarycolor2: '#F94546',
+            primarycolor3: '#201658',
+            primarycolor4: '#12372A',
+            primarycolor5: '#561C24',
+            primarycolor6: '#030637',
+            primarycolor7: '#7a287c',
+            primarycolor8: '#505b55',
+            primarycolor9: '#c87500',
+            primarycolor10: '#110a00',
+            primarytext1: '#5C1647',
+            primarytext2: '#F94546',
+            primarytext3: '#201658',
+            primarytext4: '#12372A',
+            primarytext5: '#561C24',
+            primarytext6: '#030637',
+            primarytext7: '#7a287c',
+            primarytext8: '#505b55',
+            primarytext9: '#c87500',
+            primarytext10: '#110a00',
+            }
+        }
+    }
+}
+
 $(document).ready(function () {
     $('a[href^="#"]').on('click', function (e) {
         e.preventDefault();
@@ -84,19 +113,19 @@ $(document).ready(function () {
     // Function to handle carousel movement
     function moveCarousel(direction) {
         let newPosition;
-
+    
         if (direction === "next") {
             newPosition = Math.min(currentPosition + 1, totalCards - visibleCards -1);
+            if (newPosition === currentPosition) {
+                newPosition = 0; // Kembali ke awal jika mencapai batas akhir
+            }
         } else {
             newPosition = Math.max(currentPosition - 1, 0);
         }
-
+    
         $('.carousel-track').css('transform', 'translateX(' + -1 * newPosition * cardWidth + 'px)');
         currentPosition = newPosition;
     }
-
-    // Initial call to adjust carousel on page load
-    moveCarousel();
 
     // Recalculate carousel on window resize
     $(window).resize(function () {
@@ -114,6 +143,11 @@ $(document).ready(function () {
     $('#carouselPrev').click(function () {
         moveCarousel("prev");
     });
+
+     // Set interval to move carousel every half second
+    setInterval(function() {
+        moveCarousel("next");
+    }, 4000);
 });
 
 $(document).ready(function(){
