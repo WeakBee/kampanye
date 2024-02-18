@@ -1,3 +1,43 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Regular.ttf') format('truetype');
+    /* Ganti path sesuai dengan lokasi file font Anda */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Bold.ttf') format('truetype');
+    /* Ganti path sesuai dengan lokasi file font Anda */
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Light.ttf') format('truetype');
+    /* Ganti path sesuai dengan lokasi file font Anda */
+    font-weight: light;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Thin.ttf') format('truetype');
+    /* Ganti path sesuai dengan lokasi file font Anda */
+    font-weight: thin;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Medium.ttf') format('truetype');
+    /* Ganti path sesuai dengan lokasi file font Anda */
+    font-weight: medium;
+    font-style: normal;
+}
+
 * {
     font-family: "Poppins", sans-serif;
 }
