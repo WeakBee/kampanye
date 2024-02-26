@@ -55,9 +55,14 @@ $(document).ready(function () {
 
 
 $(document).ready(function(){
+    $("#myModal").css("display", "none");
     $(".foto-grid").click(function(){
-        var imgSrc = $(this).find("img").attr("src");
-        $("#modalImg").attr("src", imgSrc);
+        var galleryTitle = $(this).find("p").text();
+        $("#galery-title").text(galleryTitle);
+        
+        var galleryId = $(this).data('gallery');
+        $("#" + galleryId).siblings('.gallery').hide();
+        $("#" + galleryId).show();
         $("#myModal").css("display", "block");
     });
 
@@ -65,6 +70,8 @@ $(document).ready(function(){
         $("#myModal").css("display", "none");
     });
 });
+
+
 
 $(document).ready(function(){
     $('#lainnya').hide(); // Sembunyikan input lainnya saat halaman dimuat
@@ -105,9 +112,9 @@ $(document).ready(function() {
 });
 
 $(document).ready(function () {
-    let cardWidth = $('.carousel-item').outerWidth(true);
-    let totalCards = $('.carousel-item').length;
-    let visibleCards = Math.floor($('.carousel-container').width() / cardWidth);
+    let cardWidth = $('.carousel-item-1').outerWidth(true);
+    let totalCards = $('.carousel-item-1').length;
+    let visibleCards = Math.floor($('#container-1-carousel').width() / cardWidth);
     let currentPosition = 0;
 
     // Function to handle carousel movement
@@ -123,30 +130,76 @@ $(document).ready(function () {
             newPosition = Math.max(currentPosition - 1, 0);
         }
     
-        $('.carousel-track').css('transform', 'translateX(' + -1 * newPosition * cardWidth + 'px)');
+        $('#container-track-1-carousel').css('transform', 'translateX(' + -1 * newPosition * cardWidth + 'px)');
         currentPosition = newPosition;
     }
 
     // Recalculate carousel on window resize
     $(window).resize(function () {
-        cardWidth = $('.carousel-item').outerWidth(true);
-        totalCards = $('.carousel-item').length;
-        visibleCards = Math.floor($('.carousel-container').width() / cardWidth);
+        cardWidth = $('.carousel-item-1').outerWidth(true);
+        totalCards = $('.carousel-item-1').length;
+        visibleCards = Math.floor($('#container-1-carousel').width() / cardWidth);
         moveCarousel();
     });
 
     // Navigation controls
-    $('#carouselNext').click(function () {
+    $('#carouselNext-1').click(function () {
         moveCarousel("next");
     });
 
-    $('#carouselPrev').click(function () {
+    $('#carouselPrev-1').click(function () {
         moveCarousel("prev");
     });
 
      // Set interval to move carousel every half second
     setInterval(function() {
         moveCarousel("next");
+    }, 4000);
+});
+
+$(document).ready(function () {
+    let cardWidth2 = $('.carousel-item-2').outerWidth(true);
+    let totalCards2 = $('.carousel-item-2').length;
+    let visibleCards2 = Math.floor($('#container-2-carousel').width() / cardWidth2);
+    let currentPosition2 = 0;
+
+    // Function to handle carousel movement
+    function moveCarousel2(direction2) {
+        let newPosition2;
+    
+        if (direction2 === "next") {
+            newPosition2 = Math.min(currentPosition2 + 1, totalCards2 - visibleCards2 -1);
+            if (newPosition2 === currentPosition2) {
+                newPosition2 = 0; // Kembali ke awal jika mencapai batas akhir
+            }
+        } else {
+            newPosition2 = Math.max(currentPosition2 - 1, 0);
+        }
+    
+        $('#container-track-2-carousel').css('transform', 'translateX(' + -1 * newPosition2 * cardWidth2 + 'px)');
+        currentPosition2 = newPosition2;
+    }
+
+    // Recalculate carousel on window resize
+    $(window).resize(function () {
+        cardWidth2 = $('.carousel-item-2').outerWidth(true);
+        totalCards2 = $('.carousel-item-2').length;
+        visibleCards2 = Math.floor($('#container-2-carousel').width() / cardWidth2);
+        moveCarousel2();
+    });
+
+    // Navigation controls
+    $('#carouselNext-2').click(function () {
+        moveCarousel2("next");
+    });
+
+    $('#carouselPrev-2').click(function () {
+        moveCarousel2("prev");
+    });
+
+     // Set interval to move carousel every half second
+    setInterval(function() {
+        moveCarousel2("next");
     }, 4000);
 });
 

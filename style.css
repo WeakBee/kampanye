@@ -87,6 +87,30 @@
     opacity: 0.5;
     color: #F94546;
 }
+.table-styling3 tr:nth-child(odd) td{
+    background-color: #F94546;
+    border: 1px solid black;
+    color: white;
+    padding: 1rem 1rem;
+}
+.table-styling3 tr:nth-child(odd):hover td{
+    background-color: #ffa8a8;
+    border: 1px solid black;
+    color: black;
+    padding: 1rem 1rem;
+}
+.table-styling3 tr:nth-child(even) td{
+    background-color: #5C1647;
+    border: 1px solid black;
+    color: white;
+    padding: 1rem 1rem;
+}
+.table-styling3 tr:nth-child(even):hover td{
+    background-color: #ec75c8;
+    border: 1px solid black;
+    color: black;
+    padding: 1rem 1rem;
+}
 
 .table-styling2 tr th{
     background-color: #F94546;
@@ -158,7 +182,7 @@
     display: none; 
     position: fixed; 
     z-index: 100; 
-    padding-top: 100px; 
+    padding-top: 30px; 
     left: 0;
     top: 0;
     width: 100%; 
@@ -240,4 +264,8 @@
     transform: translateY(-50%);
     z-index: 10;
     cursor: pointer;
+}
+
+#whatsapp-link:hover #whatsapp-svg {
+    fill: #FFFFFF; /* Ubah warna fill menjadi putih */
 }
