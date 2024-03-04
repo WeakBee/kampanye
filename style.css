@@ -106,7 +106,7 @@
     padding: 1rem 1rem;
 }
 .table-styling3 tr:nth-child(even):hover td{
-    background-color: #ec75c8;
+    background-color: #ffa8a8;
     border: 1px solid black;
     color: black;
     padding: 1rem 1rem;
